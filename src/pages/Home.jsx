@@ -1,9 +1,19 @@
-import { useSearchParams } from 'react-router-dom';
+import Header from './../components/Header';
+import Button from './../components/Button';
+import DiaryList from './../components/DiaryList';
+import DiaryItem from './../components/DiaryItem';
 
 const Home = () => {
-  const [params, setParams] = useSearchParams();
-
-  return <div>home</div>;
+  return (
+    <>
+      <Header
+        title={new Date().toLocaleDateString()}
+        leftChild={<Button text={'<'} />}
+        rightChild={<Button text={'>'} />}
+      />
+      <DiaryList />
+    </>
+  );
 };
 
 export default Home;
