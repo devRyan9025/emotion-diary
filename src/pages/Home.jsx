@@ -4,6 +4,7 @@ import { DiaryStateContext } from '../App';
 import Header from './../components/Header';
 import Button from './../components/Button';
 import DiaryList from './../components/DiaryList';
+import usePageTitle from '../hooks/usePageTitle';
 
 const getMontlyData = (pivotDate, data) => {
   const beginTime = new Date(
@@ -32,6 +33,7 @@ const getMontlyData = (pivotDate, data) => {
 };
 
 const Home = () => {
+  usePageTitle('감정 일기장');
   const data = useContext(DiaryStateContext);
 
   // 날짜를 버튼으로 변경하는 기능

@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Button from '../components/Button';
 import Editor from '../components/Editor';
+import usePageTitle from '../hooks/usePageTitle';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { DiaryDispatchContext } from '../App';
@@ -8,6 +9,9 @@ import { DiaryDispatchContext } from '../App';
 const New = () => {
   const { onCreate } = useContext(DiaryDispatchContext);
   const nav = useNavigate();
+
+  // 페이지 별 타이틀 설정
+  usePageTitle('새 일기 쓰기');
 
   const onSubmit = (input) => {
     onCreate(
